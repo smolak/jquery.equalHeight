@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Equal Height jQuery plugin demo</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body {
+                font-family: Arial;
+                color: #333;
+                font-size: 14px;
+                padding: 0 20px;
+            }
+
+            .box {
+                max-width: 250px;
+                min-width: 100px;
+                padding: 10px;
+                float: left;
+                margin: 0 20px 20px 0;
+            }
+
+            .cb {
+                clear: both;
+            }
+
+            .noChange .box {
+                background: rgb(178,18,18);
+            }
+
+            .onload .box {
+                background: rgb(255,252,25);
+            }
+
+            .onWindowResize .box {
+                background: rgb(20,133,204);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Equal Height jQuery plugin demo.</h1>
+        <div class="cb">
+            <p>Nothing is happening here.</p>
+        </div>
+        <div class="cb noChange">
+            <div class="box">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla auctor metus cursus commodo. Aliquam in luctus ipsum. Curabitur mattis leo eget sapien imperdiet, at vehicula lacus mattis. Vivamus dapibus sollicitudin sapien vitae hendrerit. Ut dictum sapien nibh, molestie tristique lectus gravida ut.
+            </div>
+            <div class="box">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum, augue et lobortis venenatis (...).
+            </div>
+            <div class="box">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+            <div class="box">
+                Lorem ipsum dolor sit amet (...).
+            </div>
+        </div>
+        <div class="cb">
+            <hr>
+            <p>Boxes gain equal height. But when window is narrowed, content may 'get out' of the box. Also boxes heights are not equaled right after.</p>
+            <p>Also, when page is refreshed, having the window narrow, resizing it won't equal boxes height.</p>
+        </div>
+        <div class="cb onload">
+            <div class="box">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla auctor metus cursus commodo. Aliquam in luctus ipsum. Curabitur mattis leo eget sapien imperdiet, at vehicula lacus mattis. Vivamus dapibus sollicitudin sapien vitae hendrerit. Ut dictum sapien nibh, molestie tristique lectus gravida ut.
+            </div>
+            <div class="box">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum, augue et lobortis venenatis (...).
+            </div>
+            <div class="box">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+            <div class="box">
+                Lorem ipsum dolor sit amet (...).
+            </div>
+        </div>
+        <div class="cb">
+            <hr>
+            <p>Boxes gain equal height, on page load and after window is resized :)</p>
+        </div>
+        <div class="cb onWindowResize">
+            <div class="box">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla auctor metus cursus commodo. Aliquam in luctus ipsum. Curabitur mattis leo eget sapien imperdiet, at vehicula lacus mattis. Vivamus dapibus sollicitudin sapien vitae hendrerit. Ut dictum sapien nibh, molestie tristique lectus gravida ut.
+            </div>
+            <div class="box">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum, augue et lobortis venenatis (...).
+            </div>
+            <div class="box">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+            <div class="box">
+                Lorem ipsum dolor sit amet (...).
+            </div>
+        </div>
+
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="jquery.equalHeight.js"></script>
+        <script>
+            $('.onload .box').equalHeight({onWindowResize: false});
+            $('.onWindowResize .box').equalHeight();
+        </script>
+    </body>
+</html>
